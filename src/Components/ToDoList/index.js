@@ -8,13 +8,8 @@ export function ToDoList ()
             <h2 className='heading'>
               My Todo        </h2>
             <InputField />
-            <hr></hr>
-
-                
-                <ToDoTask />
-                  
-              
+            <hr></hr>                
+              <ToDoTask />
             </div>
-
     );
 }

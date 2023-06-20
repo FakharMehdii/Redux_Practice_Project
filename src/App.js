@@ -1,18 +1,11 @@
-
 import './App.css'
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import {Homepage} from './Components/Homepage/index'
-
-
-
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (
-    <Homepage  />
-
-    
+    <Homepage  />    
   );
-
 }
 
 export default App;
