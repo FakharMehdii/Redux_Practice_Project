@@ -1,11 +1,11 @@
 import { ToDoList } from '../ToDoList';
 
-export function Homepage ({handleChange, setTasks,    tasks, inputValue, handleKeyPress})
+export function Homepage ()
 {
   return(
     <div className="App">
       
-      <ToDoList inputValue={inputValue} handleChange={handleChange} handleKeyPress={handleKeyPress} setTasks={setTasks} tasks={tasks}  />
+      <ToDoList  />
 
   </div>
   );
