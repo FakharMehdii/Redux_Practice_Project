@@ -67,15 +67,13 @@
   border-radius: 5px;  
 }
 
-#edit , #del{
-  
+#edit , #del{  
   font-size: 12px;
   padding: 0px 12px;
 }
 
 .fa-solid  {
-  size: 500px;
-  
+  size: 500px;  
 }
 
 .desc {
