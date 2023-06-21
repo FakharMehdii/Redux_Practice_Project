@@ -2,7 +2,7 @@ export function ToDoTask () {
   return(
     <div className='todoTask'>
       <div>
-        <input   className="cbox" type='checkbox'  /> 
+        <input   className="checkbox" type='checkbox'  /> 
         <span className= 'normal'>task</span> 
       </div>               
       <div>
