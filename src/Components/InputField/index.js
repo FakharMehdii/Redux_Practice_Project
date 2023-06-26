@@ -1,9 +1,9 @@
-import { useSelector, useDispatch } from 'react-redux'
 import { addTodo } from '../../store/actions';
-export function InputField ()
-{
-  const dispatch = useDispatch()
+import { useDispatch } from 'react-redux'
 
+export const InputField = () => {
+  const dispatch = useDispatch()
+  
   const handleKeyDown=(event)=>{
     if(event.key === 'Enter' && event.target.value !== "")
     {
@@ -11,9 +11,7 @@ export function InputField ()
       event.target.value='';
 
     }
-
-  }
-
+  };
 
   return(
     <input 

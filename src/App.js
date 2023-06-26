@@ -1,11 +1,10 @@
 import './App.css'
-
+import store from './store'
+import {Provider} from 'react-redux'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 import {Homepage} from './Components/Homepage/index'
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
-import {Provider} from 'react-redux';
-import store from './store';
-function App() {
+const App = () => {
   return (
     <Provider store={store}>
      <Homepage  />    
