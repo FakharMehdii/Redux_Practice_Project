@@ -1,25 +1,46 @@
 import { combineReducers } from "redux"
-
+import {ADD_TODO} from '../actions/index'
+import { EDIT_TODO } from "../actions/index";
+import { REMOVE_TODO } from "../actions/index";
 
 const initialState = {
     tasks: [],
 }
 
-function taskReducer(state = initialState, action) {
+const list = (state = initialState, action) => {
+    
     switch (action.type) {
         case ADD_TODO:
+        {   
             return {
-                ...state, tasks: [...state.tasks, action.payload],
+                tasks: [...state.tasks, action.payload],
             };
-            default:
-                return state;
 
-    }
+        }
+        case REMOVE_TODO:
+        {
+            const updatedTasks = state.tasks.filter((task, index) => index !== action.payload);
+            return {
+                ...state,
+                tasks: updatedTasks,
+            };
+        }
+        case EDIT_TODO:
+        {
+            const updatedTasks= state.tasks;
+            updatedTasks[action.payload.item] = action.payload.value;
+            return {
+                tasks: updatedTasks,
+            }
+
+        }
+        default:
+            return state;
+    }    
 }
 
 const rootReducer = combineReducers({
-    tasks:taskReducer,
-
+    list,
 });
 
 export default rootReducer;

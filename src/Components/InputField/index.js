@@ -1,15 +1,24 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { addTodo } from '../../store/actions';
+import { useDispatch } from 'react-redux'
 
-export function InputField ()
-{
+export const InputField = () => {
   const dispatch = useDispatch()
+  
+  const handleKeyDown=(event)=>{
+    if(event.key === 'Enter' && event.target.value !== "")
+    {
+      dispatch(addTodo(event.target.value));
+      event.target.value='';
+
+    }
+  };
+
   return(
     <input 
     type='text'
     className='input'
     placeholder='Input task name and then tab enter to add'
-    onChange={() => dispatch(changeValue())}
-    onKeyDown={()=> dispatch(addTodo())}
+    onKeyDown={handleKeyDown}
     autoFocus
   />
   );

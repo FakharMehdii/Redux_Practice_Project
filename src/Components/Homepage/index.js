@@ -1,7 +1,6 @@
 import { ToDoList } from '../ToDoList';
 
-export function Homepage ()
-{
+export const Homepage = () =>{
   return(
     <div className="App">      
       <ToDoList  />
