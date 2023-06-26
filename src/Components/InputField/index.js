@@ -9,7 +9,6 @@ export const InputField = () => {
     {
       dispatch(addTodo(event.target.value));
       event.target.value='';
-
     }
   };
 

@@ -27,20 +27,15 @@ export function ToDoTask ({element, index}) {
       dispatch(editTodo(indexToBeEdited, inputValue));
     }
   }
-
-  let divToBeDisplayed ;
-
-  if(edit)
-    divToBeDisplayed = <div>  <input   className="checkbox" type='text' value={inputValue ?  inputValue : element} onChange={handleEditChange} onKeyDown={handleEditKeyPress} autoFocus /></div>;
-  else
-    divToBeDisplayed = <div> <input    type='checkbox' onChange={(event) => {event.target.checked ? setDone(true) : setDone(false)}} /> <span className= {done? 'strike':'normal'} >{inputValue===''? element : inputValue}</span> </div>;
-
   return(
     <div className='todoTask'>
-    {divToBeDisplayed}   
+      {
+          edit ? <div>  <input   className="checkbox" type='text' value={inputValue ?  inputValue : element} onChange={handleEditChange} onKeyDown={handleEditKeyPress} autoFocus /></div>  
+          : <div> <input    type='checkbox' onChange={(event) => {event.target.checked ? setDone(true) : setDone(false)}} /> <span className= {done? 'strike':'normal'} >{inputValue===''? element : inputValue}</span> </div> 
+      }
       <div>
-        <i id='edit'  className='fa fa-edit edit' onClick={() => handleEdit(index)}></i>
-        <i id='delete' className="fa-solid fa-trash-can" onClick={ () => {dispatch(removeTodo(index))} }></i>
+        <i id='edit'   className='fa fa-edit edit buttons' onClick={() => handleEdit(index)}></i>
+        <i id='delete'  className='fa-solid fa-trash-can buttons' onClick={ () => {dispatch(removeTodo(index))} }></i>
       </div>    
   </div>
     );
